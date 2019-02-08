@@ -55,4 +55,7 @@ CustomTab(
   ))
 ```
 
-![](gif.gif)
+![](gif.gif) | width="100" | height="400"
+
+## Design Courtesy
+[Philson K Philip](https://github.com/philson-philip)
