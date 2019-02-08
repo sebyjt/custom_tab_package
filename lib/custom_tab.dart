@@ -8,8 +8,13 @@ class CustomTab extends StatefulWidget {
   Function tabBuilder;
   IndexedWidgetBuilder pageBuilder;
   Color indicatorColor;
+  double tabViewPortFraction;
+  double tabScale;
+  int tabFlex;
+  int pageFlex;
+  double tabElevation;
   double indicatorHeight;
-  CustomTab(this.pageCount,this.tabBuilder,this.pageBuilder,{this.overlayColor=Colors.transparent ,this.backgroundColor=Colors.white,this.indicatorColor=Colors.white,this.indicatorHeight=5.0});
+  CustomTab(this.pageCount,this.tabBuilder,this.pageBuilder,{this.tabElevation=5.0,this.tabViewPortFraction=.4,this.tabScale=.01,this.tabFlex=1,this.pageFlex=2,this.overlayColor=Colors.transparent ,this.backgroundColor=Colors.white,this.indicatorColor=Colors.white,this.indicatorHeight=5.0});
   @override
   _CustomTabState createState() => _CustomTabState();
 }
@@ -44,19 +49,18 @@ class _CustomTabState extends State<CustomTab> {
         backgroundColor: widget.backgroundColor,
         body: Column(children: <Widget>[
           new Expanded(
-              flex: 1,
+              flex: widget.tabFlex,
               child: Container(
                   child: Center(
                     child: Swiper(
                       controller: controller2,
-                      viewportFraction: .4,
-                      scale: .01,
+                      viewportFraction: widget.tabViewPortFraction,
+                      scale:widget.tabScale,
                       loop: false,
                       autoplay: false,
                       scrollDirection: Axis.horizontal,
                       onIndexChanged: (i) {
                         setState(() {
-                          print("hello");
                           for(int ind=0;ind<widget.pageCount;ind++) {
                             if(i==ind)
                             {width[ind]=10.0;
@@ -74,7 +78,6 @@ class _CustomTabState extends State<CustomTab> {
                       itemBuilder: (context, i) => new GestureDetector(
                         onTap: () {
                           setState(() {
-                            print("hello");
                             for(int ind=0;ind<widget.pageCount;ind++) {
                               if(i==ind)
                               {width[ind]=10.0;
@@ -97,7 +100,7 @@ class _CustomTabState extends State<CustomTab> {
 
                                 child:Card(
                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0 )),
-                                  elevation: 5.0,
+                                  elevation: widget.tabElevation,
 
 
                                   child:
@@ -131,7 +134,7 @@ class _CustomTabState extends State<CustomTab> {
                     ),
                   ))),
           Expanded(
-              flex: 2,
+              flex: widget.pageFlex,
               child: PageView.builder(
                   itemCount: widget.pageCount,
                   controller: controller,
@@ -139,7 +142,6 @@ class _CustomTabState extends State<CustomTab> {
                   pageSnapping: true,
                   onPageChanged: (i) {
                     setState(() {
-                      print("hello");
                       for(int ind=0;ind<widget.pageCount;ind++) {
                         if(i==ind)
                         {width[ind]=10.0;
