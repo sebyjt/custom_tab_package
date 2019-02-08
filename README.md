@@ -2,11 +2,11 @@
 
 A beautiful 3-D Tab View widget with lots of customizations
 
-##Usage
+## Usage
 
 To use this plugin, add shared_preferences as a dependency in your pubspec.yaml file
 
-##Example
+## Example
 
 ```dart
 CustomTab(
