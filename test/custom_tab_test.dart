@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   test('adds one to input values', () {
-    final calculator = CustomTab(5,Card(),(context,i){});
+    final calculator = CustomTab(5,(i){},(context,i){});
 
   });
 }

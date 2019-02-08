@@ -1,8 +1,8 @@
 name: custom_tab
 description: A 3d tab view
-version: 0.0.1
+version: 0.0.2
 author: Seby Joseph<sjkappan@gmail.com>
-homepage:
+homepage: https://github.com/sebyjt/custom_tab_package
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"

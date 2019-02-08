@@ -3,13 +3,13 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 class CustomTab extends StatefulWidget {
 
   int pageCount;
-  Color overlayColor=Colors.white.withAlpha(1000);
+  Color overlayColor;
   Color backgroundColor;
-  Widget tabBuilder;
+  Function tabBuilder;
   IndexedWidgetBuilder pageBuilder;
   Color indicatorColor;
   double indicatorHeight;
-  CustomTab(this.pageCount,this.tabBuilder,this.pageBuilder,{this.overlayColor,this.backgroundColor,this.indicatorColor,this.indicatorHeight});
+  CustomTab(this.pageCount,this.tabBuilder,this.pageBuilder,{this.overlayColor=Colors.transparent ,this.backgroundColor=Colors.white,this.indicatorColor=Colors.white,this.indicatorHeight=5.0});
   @override
   _CustomTabState createState() => _CustomTabState();
 }
@@ -105,7 +105,7 @@ class _CustomTabState extends State<CustomTab> {
                                       fit: StackFit.expand,
                                       overflow: Overflow.visible,
                                       children:[
-                                        widget.tabBuilder,
+                                        widget.tabBuilder(i),
                                         Align(
                                           alignment: Alignment.bottomCenter,
                                           child: Container(
