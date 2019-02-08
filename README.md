@@ -4,7 +4,7 @@ A beautiful 3-D Tab View widget with lots of customizations
 
 ## Usage
 
-To use this plugin, add shared_preferences as a dependency in your pubspec.yaml file
+To use this plugin, add custom_tab as a dependency in your pubspec.yaml file
 
 ## Example
 
