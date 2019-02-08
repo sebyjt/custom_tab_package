@@ -55,7 +55,7 @@ CustomTab(
   ))
 ```
 
-![](gif.gif | width=100 | height=400)
+<img src="https://github.com/sebyjt/custom_tab_package/blob/master/gif.gif" width="100" height="500" />
 
 ## Design Courtesy
 [Philson K Philip](https://github.com/philson-philip)
